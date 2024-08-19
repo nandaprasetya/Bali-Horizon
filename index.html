@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizon Bali</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="media/Logo Horizon.png" type="image/x-icon">
+</head>
+<body>
+    <nav class="nav">
+        <img src="media/Logo Horizon Title.png" alt="">
+        <div class="nav-btn" id="nav-btn">
+            <div class="nav-line"></div>
+            <div class="nav-line"></div>
+        </div>
+    </nav>
+    <div class="nav-menu">
+        <div class="nav-menu-head hide">
+            <img src="media/Logo Horizon Title.png" alt="">
+            <div class="nav-close" id="nav-close">
+                <div class="nav-close-line"></div>
+                <div class="nav-close-line"></div>
+            </div>
+        </div>
+        <div class="nav-menu-area">
+            <div class="inner-nav-menu hide">
+                <a href="" class="nav-menu-link" id="nav-link-home"> <div class="nav-menu-line"></div> Home</a>
+                <a href="" class="nav-menu-link" id="nav-link-destination"><div class="nav-menu-line"></div> Destination</a>
+                <a href="" class="nav-menu-link" id="nav-link-activity"><div class="nav-menu-line"></div> Activity</a>
+                <a href="" class="nav-menu-link" id="nav-link-culinary"><div class="nav-menu-line"></div> Culinary</a>
+                <a href="" class="nav-menu-link" id="nav-link-accommodation"><div class="nav-menu-line"></div> Accommodation</a>
+                <a href="" class="nav-menu-link" id="nav-link-transportation"><div class="nav-menu-line"></div> Transportation</a>
+            </div>
+            <img src="media/gwk.jpg" alt="" id="preview-nav-link" class="hide">
+            <div class="other-menu hide">
+                <a href="" class="nav-menu-other">Souvenirs</a>
+                <a href="" class="nav-menu-other">Photographer</a>
+                <a href="" class="nav-menu-other">Tour Guide</a>
+                <a href="" class="nav-menu-other">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="home">
+        <h1>Explore Bali <br> with Us</h1>
+        <p>Your adventure starts here. Discover unforgettable <br> experiences, handpicked for you.</p>
+    </div>
+
+    <script src="plugins/jquery.js"></script>
+    <script src="plugins/gsap.js"></script>
+    <script src="plugins/ScrollTrigger.js"></script>
+    <script>
+        $("#nav-btn").click(function(){
+            $(".nav").addClass("active");
+            setTimeout(() => {
+                $(".nav-menu").addClass("active");
+                setTimeout(() => {
+                    $(".nav-menu-head").removeClass("hide");
+                    $(".inner-nav-menu").removeClass("hide");
+                    $("#preview-nav-link").removeClass("hide");
+                    $(".other-menu").removeClass("hide");
+                }, 400);
+            }, 400);
+        });
+        
+        $(".nav-btn").hover(function(){
+            $(this).find('.nav-line').addClass('active');
+        }, function(){
+            $(this).find('.nav-line').removeClass('active');
+        });
+
+        $("#nav-close").click(function(){
+            $(".nav-menu-head").addClass("hide");
+            $(".inner-nav-menu").addClass("hide");
+            $("#preview-nav-link").addClass("hide");
+            $(".other-menu").addClass("hide");
+            setTimeout(() => {
+                $(".nav-menu").removeClass("active");
+                setTimeout(() => {
+                    $(".nav").removeClass("active");
+                }, 400);
+            }, 500);
+        });
+
+        $(".nav-menu-link").hover(function(){
+            $(this).find('.nav-menu-line').addClass('active');
+            $(".nav-menu-link").addClass("not-active");
+            $(this).removeClass("not-active");
+        }, function() {
+            $(this).find('.nav-menu-line').removeClass('active');
+            $(".nav-menu-link").removeClass("not-active");
+        }
+        );
+
+        $("#nav-link-home").hover(function(){
+            $("#preview-nav-link").attr('src', 'media/gwk.jpg');
+        });
+        $("#nav-link-destination").hover(function(){
+            $("#preview-nav-link").attr('src', 'media/Destination.jpg');
+        });
+        $("#nav-link-activity").hover(function(){
+            $("#preview-nav-link").attr('src', 'media/Activity.jpg');
+        });
+        $("#nav-link-culinary").hover(function(){
+            $("#preview-nav-link").attr('src', 'media/Culinary.jpg');
+        });
+        $("#nav-link-accommodation").hover(function(){
+            $("#preview-nav-link").attr('src', 'media/Accommodation.jpg');
+        });
+        $("#nav-link-transportation").hover(function(){
+            $("#preview-nav-link").attr('src', 'media/Transportation.jpg');
+        });
+    </script>
+</body>
+</html>

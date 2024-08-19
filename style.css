@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Belleza&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+}
+
+nav{
+    width: 100%;
+    height: fit-content;
+    padding: 20px 3%;
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.5s ease;
+}
+
+.nav.active{
+    top: -10%;
+    transition: 0.3s ease;
+}
+
+nav img{
+    width: fit-content;
+    height: 50px;
+}
+
+nav .nav-btn{
+    width: 60px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f7f7f7;
+    cursor: pointer;
+}
+
+.nav-btn .nav-line{
+    width: 40px;
+    height: 1.5px;
+    background-color: #2c5728;
+    /* background-color: #f7f7f7; */
+    transition: 0.5s ease;
+}
+
+.nav-btn .nav-line:nth-child(1){
+    margin-bottom: 5px;
+    /* height: 2px; */
+}
+
+.nav-line.active{
+    margin-bottom: 0px !important;
+    height: 1px;
+    transition: 0.5s ease;
+}
+.nav-menu{
+    width: 100%;
+    height: 100vh;
+    background-color: #f7f7f7;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    clip-path: inset(0 0 100% 0);
+    transition: 0.6s ease-out;
+}
+
+.nav-menu.active{
+    clip-path: inset(0 0 0 0);
+    transition: 0.6s ease-out;
+}
+
+.nav-menu-head{
+    width: 100%;
+    height: fit-content;
+    padding: 20px 3%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.4s ease;
+}
+
+.nav-menu-head.hide{
+    transform: translateY(-100%);
+    transition: 0.4s ease;
+}
+
+.nav-menu-head img{
+    width: fit-content;
+    height: 50px;
+}
+
+.nav-menu-head .nav-close{
+    width: 50px;
+    height: 50px;
+    background-color: #1c4219;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.nav-close .nav-close-line{
+    width: 30px;
+    height: 1px;
+    background-color: #f7f7f7;
+}
+
+.nav-menu-area{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.inner-nav-menu{
+    min-width: fit-content;
+    width: 400px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    transition: 0.7s ease;
+}
+
+.inner-nav-menu.hide{
+    opacity: 0;
+    transform: translateY(10%);
+    transition: 0.7s ease;
+}
+
+.nav-menu-link{
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    font-size: 40px;
+    color: #1c4219;
+    font-family: "Belleza", sans-serif;
+    margin-bottom: 30px;
+    line-height: 100%;
+    transition: 0.5s ease;
+}
+
+.nav-menu-link.not-active{
+    opacity: 0.6;
+    transition: 0.5s ease;
+}
+
+.nav-menu-link .nav-menu-line{
+    width: 0px;
+    height: 2px;
+    background-color: #1c4219;
+    margin-right: 20px;
+    transition: 0.5s ease;
+}
+
+.nav-menu-line.active{
+    transition: 0.5s ease;
+    width: 50px;
+}
+
+.nav-menu-link:nth-child(odd) .nav-menu-line{
+    height: 1.6px;
+}
+
+#preview-nav-link{
+    width: 25%;
+    height: fit-content;
+    object-fit: cover;
+    aspect-ratio: 3/4;
+    transition: 1s ease;
+    clip-path: inset(0 0 0 0);
+}
+
+#preview-nav-link.hide{
+    clip-path: inset(100% 0 0 0);
+    transition: 1s ease;
+}
+
+.other-menu{
+    width: 18%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s ease;
+}
+
+.other-menu.hide{
+    opacity: 0;
+    transform: translateY(20%);
+    transition: 0.5s ease;
+}
+
+.other-menu .nav-menu-other{
+    width: fit-content;
+    text-transform: uppercase;
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #1c4219;
+}
+
+.home{
+    width: 100%;
+    height: 100vh;
+    background-image: url('media/home-background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    padding-bottom: 5%;
+}
+
+.home h1{
+    font-size: 90px;
+    text-align: center;
+    color: #f7f7f7;
+    font-weight: 300;
+    font-family: "Belleza", sans-serif;
+}
+
+.home p{
+    color: #f7f7f7;
+    font-weight: 500;
+    text-align: center;
+}
