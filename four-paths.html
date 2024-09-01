@@ -17,7 +17,7 @@
             <p>GET QUIZ</p>
         </div>
     </div>
-    <div class="outer-question">
+    <div class="outer-question opacity none">
         <div class="area-question">
             <div class="box-question d-flex flex-column align-center">
                 <div class="close-btn-quiz">
@@ -25,7 +25,7 @@
                 </div>
                 <h1>Find Your Path</h1>
                 <div class="area-number-col d-flex justify-center">
-                    <div class="number-question">
+                    <div class="number-question active">
                         01
                     </div>
                     <div class="number-question">
@@ -115,7 +115,18 @@
     </div>
 
     <script src="plugins/jquery.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script> 
     <script>
+        const lenis = new Lenis()
+        lenis.on('scroll', (e) => {
+            console.log(e)
+        });
+        function raf(time) {
+            lenis.raf(time)
+            requestAnimationFrame(raf)
+        }
+        requestAnimationFrame(raf)
+
         let scoreAnswer = { refresh: 0, restore: 0, relax: 0, renew: 0 };
         let nomorSoal = 0;
         let selectedAnswer = "";
@@ -199,24 +210,91 @@
                 $(".submit-answer").removeClass("active");
                 $(".option-answer").removeClass("selected-answer");
                 nomorSoal++;
+                if(nomorSoal == 0){
+                    $(".number-question").removeClass("active");
+                    $(".number-question:nth-child(1)").addClass("active");
+                }else if(nomorSoal == 1){
+                    $(".number-question").removeClass("active");
+                    $(".number-question:nth-child(2)").addClass("active");
+                }else if(nomorSoal == 2){
+                    $(".number-question").removeClass("active");
+                    $(".number-question:nth-child(3)").addClass("active");
+                }else if(nomorSoal == 3){
+                    $(".number-question").removeClass("active");
+                    $(".number-question:nth-child(4)").addClass("active");
+                }else if(nomorSoal == 4){
+                    $(".number-question").removeClass("active");
+                    $(".number-question:nth-child(5)").addClass("active");
+                }
+
+                
                 if(nomorSoal < quizData.length){
                     loadQuestion(nomorSoal);
                 }else{
                     let highestScoreType = "";
                     let highestScore = 0;
+                    let pathImgResult = "";
                     for(let type in scoreAnswer){
                         if (scoreAnswer[type] > highestScore) {
                             highestScore = scoreAnswer[type];
                             highestScoreType = type;
                         }
                     }
+                    if(highestScoreType == "refresh"){
+                        pathImgResult = "media/four-step-1.jpg";
+                    }else if(highestScoreType == "restore"){
+                        pathImgResult = "media/four-step-2.jpg";
+                    }else if(highestScoreType == "relax"){
+                        pathImgResult = "media/four-step-3.jpg";
+                    }else if(highestScoreType == "renew"){
+                        pathImgResult = "media/four-step-4.jpg";
+                    }
+
+                    $(".number-question").css("display", "none");
+                    $(".number-question:nth-child(5)").css("display", "flex");
+                    $(".number-question:nth-child(5)").text("COMPLETED");
+                    $(".text-question").text("");
+                    $(".area-answer").empty();
+                    $(".area-answer").addClass("result");
+                    $(".area-answer").append(
+                        '<img src="'+`${pathImgResult}`+'" alt="result" class="img-result-quiz">'+
+                        '<div class="area-result-quiz d-flex flex-column justify-between">'+
+                            '<div>'+
+                                '<p>THE RECOMMENDATION</p>'+
+                                '<h2>'+`${highestScoreType}`+'</h2>'+
+                                '<p>Based on the information you have provided, we recommend the following activities and experiences tailored to your interests.</p>'+
+                            ' </div>'+
+                            '<div class="result-quiz-btn">Explore This Path</div>'+
+                        '</div>'
+                    );
+
+                    
                     console.log(`Most selected answer type is: ${highestScoreType} with ${highestScore} points.`);
                 }
             }
 
             selectedAnswer = "";
+        });
 
-            console.log(scoreAnswer);
+        $(".exit-question").click(function(){
+            $(".outer-question").addClass('opacity');
+            setTimeout(() => {
+                $(".outer-question").addClass('none');
+            }, 500);
+        });
+
+        $(".close-btn-quiz").click(function(){
+            $(".outer-question").addClass('opacity');
+            setTimeout(() => {
+                $(".outer-question").addClass('none');
+            }, 500);
+        });
+
+        $(".quiz-btn").click(function(){
+            $(".outer-question").removeClass('none');
+            setTimeout(() => {
+                $(".outer-question").removeClass('opacity');
+            }, 10);
         });
     </script>
 </body>

@@ -268,7 +268,17 @@
     <script src="plugins/gsap.js"></script>
     <script src="plugins/ScrollTrigger.js"></script>
     <script src="plugins/swiper.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script> 
     <script>
+    const lenis = new Lenis()
+        lenis.on('scroll', (e) => {
+            console.log(e)
+        });
+        function raf(time) {
+            lenis.raf(time)
+            requestAnimationFrame(raf)
+        }
+        requestAnimationFrame(raf)
     const swiper = new Swiper('.inner-popular-destination', {
         direction: 'horizontal',
         loop: true,
