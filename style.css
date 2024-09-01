@@ -37,6 +37,11 @@
     justify-content: center;
 }
 
+.justify-end{
+    display: flex;
+    justify-content: end;
+}
+
 .align-center{
     display: flex;
     align-items: center;
@@ -250,6 +255,16 @@ nav .nav-btn{
     font-size: 20px;
     margin-bottom: 20px;
     color: #1c4219;
+}
+
+main{
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    background-color: #fff;
+    position: relative;
+    z-index: 1;
+
 }
 
 .home{
@@ -554,4 +569,354 @@ nav .nav-btn{
     height: 1px;
     background-color: #d4d4d4;
 
+}
+
+.home-four-step{
+    width: 100%;
+    height: 100%;
+    padding-top: 100px;
+    background-color: #B5C18E;
+}
+
+.home-four-step .header-four-step{
+    width: 85%;
+    height: fit-content;
+    margin-bottom: 60px;
+}
+
+.header-four-step h1{
+    font-family: "Belleza", sans-serif;
+    font-weight: 300;
+    font-size: 50px;
+    color: #1c4219;
+}
+
+.header-four-step a{
+    letter-spacing: 1px;
+    color: #1c4219;
+    padding: 8px 4px;
+    border-bottom: 1px solid #1c4219;
+}
+
+.header-four-step img{
+    width: 20px;
+    height: 20px;
+    margin-left: 8px;
+}
+
+.area-four-step{
+    width: 100%;
+    height: 80vh;
+    background-image: url('media/four-step-0.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    transition: 0.5s ease;
+}
+
+.area-four-step.step1{
+    background-image: url('media/four-step-1.jpg');
+    transition: 0.5s ease;
+}
+.area-four-step.step2{
+    background-image: url('media/four-step-2.jpg');
+    transition: 0.5s ease;
+}
+.area-four-step.step3{
+    background-image: url('media/four-step-3.jpg');
+    transition: 0.5s ease;
+}
+.area-four-step.step4{
+    background-image: url('media/four-step-4.jpg');
+    transition: 0.5s ease;
+}
+
+.box-step{
+    width: 25%;
+    height: 100%;
+    border-right:1px solid #f7f7f7;
+    padding: 50px 0px;
+}
+
+@keyframes boxstep {
+    0%{
+        opacity: 0.5;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+
+.box-step.nonhover{
+    opacity: 0.8;
+}
+
+.box-step h1{
+    font-family: "Belleza", sans-serif;
+    font-size: 50px;
+    font-weight: 300;
+    color: #f7f7f7;
+}
+
+.box-step p{
+    color: #f7f7f7;   
+}
+
+footer{
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 100px 0px;
+    background-color: #1c4219;
+}
+
+.inner-footer{
+    width: 100%;
+    background-image: url(media/four-step-1.jpg);
+    height: 400px;
+}
+
+.landing-four-paths{
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(media/four-step-0.jpg);
+    background-size: cover;
+    text-align: center;
+}
+
+.landing-four-paths h1{
+    font-family: "Belleza", sans-serif;
+    color: #1c4219;
+    font-weight: 300;
+    font-size: 80px;
+}
+
+.landing-four-paths p{
+    width: 40%;
+    color: #2c5728;
+    font-weight: 500;
+    margin: 16px;
+}
+
+.sticky-path{
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.sticky-path .box-sticky-path{
+    width: 100%;
+    height: 100vh;
+    position: sticky;
+    top: 0px;
+    padding: 40px;
+    background-color: #fff;
+}
+
+.inner-sticky-path{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+
+.overlay-sticky-path{
+    width: 100%;
+    height: 100%;
+    padding: 80px;
+    background-color: rgba(43, 32, 22, 0.6);
+}
+
+.inner-sticky-path h1{
+    color: #f7f7f7;
+    font-family: "Belleza", sans-serif;
+    font-weight: 200;
+    font-size: 80px;
+    margin-bottom: 16px;
+}
+
+.inner-sticky-path p{
+    width: 50%;
+    color: #f1f1f1;
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+.btn-sticky-path{
+    padding: 12px 24px;
+    color: #f7f7f7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: none;
+}
+
+.quiz-btn{
+    width: fit-content;
+    height: 100px;
+    position: fixed;
+    bottom: 5%;
+    right: 0px;
+    z-index: 10;
+}
+
+.quiz-btn .image-quiz{
+    height: 100%;
+    aspect-ratio: 1/1;
+    background-image: url(media/quiz-photo-mini.jpg);
+    background-size: cover;
+}
+
+.overlay-quiz{
+    width: 100%;
+    height: 100%;
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(28,66,25,1) 100%);
+}
+
+.quiz-btn .text-quiz{
+    width: 100%;
+    height: 100%;
+    background-color: #1c4219;
+    padding: 12px 36px;
+}
+
+.text-quiz h1{
+    font-size: 20px;
+    color: #f7f7f7;
+    font-family: "Belleza", sans-serif;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+.text-quiz p{
+    color: #f1f1f1;
+    font-size: 13px;
+}
+
+.outer-question{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    z-index: 11;
+}
+
+.area-question{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.box-question{
+    width: 70%;
+    min-height: 80vh;
+    background-color: #f7f7f7;
+    margin: 10vh auto;
+    padding: 20px;
+    position: relative;
+}
+
+.close-btn-quiz{
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    cursor: pointer;
+}
+
+.close-btn-quiz img{
+    width: 100%;
+    height: 100%;
+}
+
+.box-question h1{
+    font-size: 30px;
+    text-align: center;
+    font-family: "Belleza", sans-serif;
+    font-weight: 300;
+    color: #1c4219;
+    margin-bottom: 20px;
+}
+
+.area-number-col{
+    width: 100%;
+    height: fit-content;
+    border-bottom: 1px solid #d4d4d4;
+}
+
+.area-number-col .number-question{
+    padding: 12px 0px;
+    margin: 0px 12px;
+    font-family: "Belleza", sans-serif;
+    font-weight: 600;
+    color: #b2b2b2;
+    cursor: pointer;
+}
+
+.area-number-col .number-question:nth-child(1){
+    color: #1c4219;
+    border-bottom: 1px solid #1c4219;
+}
+
+.header-question{
+    width: 100%;
+    height: fit-content;
+}
+
+.header-question h1{
+    margin: 40px 0px;
+}
+
+.area-answer{
+    width: 80%;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.option-answer{
+    width: 45%;
+    height: fit-content;
+    margin: 20px 0px;
+    font-weight: 300;
+    padding: 12px 24px;
+    cursor: pointer;
+}
+
+.option-answer.selected-answer{
+    background-color: #f3f7e5;
+    border: 1px solid #1c4219;
+}
+
+.submit-answer{
+    width: fit-content;
+    height: fit-content;
+    padding: 16px 32px;
+    border: 1px solid #1c4219;
+    margin: auto;
+    cursor: pointer;
+    transition: 0.5s ease;
+    transform: scale(0);
+}
+
+.submit-answer.active{
+    transition: 0.5s ease;
+    transform: scale(1);
+}
+
+.submit-answer:hover{
+    background-color: #1c4219;
+    color: #f7f7f7;
+    transition: 0.5s ease;
+}
+
+.exit-question{
+    width: 100%;
+    height: 100%;
 }

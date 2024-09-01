@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Four Paths to Happiness</title>
+    <link rel="shortcut icon" href="media/Logo Horizon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="quiz-btn d-flex align-center">
+        <div class="image-quiz">
+            <div class="overlay-quiz"></div>
+        </div>
+        <div class="text-quiz d-flex flex-column align-center justify-center">
+            <h1>Find Your Path</h1>
+            <p>GET QUIZ</p>
+        </div>
+    </div>
+    <div class="outer-question">
+        <div class="area-question">
+            <div class="box-question d-flex flex-column align-center">
+                <div class="close-btn-quiz">
+                    <img src="media/close.png" alt="">
+                </div>
+                <h1>Find Your Path</h1>
+                <div class="area-number-col d-flex justify-center">
+                    <div class="number-question">
+                        01
+                    </div>
+                    <div class="number-question">
+                        02
+                    </div>
+                    <div class="number-question">
+                        03
+                    </div>
+                    <div class="number-question">
+                        04
+                    </div>
+                    <div class="number-question">
+                        05
+                    </div>
+                </div>
+                <div class="header-question d-flex flex-column align-center">
+                    <h1 class="text-question">What do you need the most right now?</h1>
+                    <div class="area-answer">
+                        <div class="option-answer" id="answer-a">
+                            A. Spending time outdoors to feel refreshed and invigorated.
+                        </div>
+                        <div class="option-answer" id="answer-b">
+                            B. Recharging your energy and rejuvenating both body and mind.
+                        </div>
+                        <div class="option-answer" id="answer-c">
+                            C. Enjoying uninterrupted quiet time in a peaceful place.
+                        </div>
+                        <div class="option-answer" id="answer-d">
+                            D. Experiencing something new and meaningful to renew yourself.
+                        </div>
+                    </div>
+                </div>
+                <div class="submit-answer">SUBMIT ANSWER</div>
+            </div>
+            <div class="exit-question"></div>
+        </div>
+    </div>
+    <div class="landing-four-paths d-flex flex-column align-center justify-center">
+        <h1>Discover Four Paths <br> to Happiness</h1>
+        <p>Seeking a change of pace? Explore our curated travel experiences designed to relax, restore, renew, or refresh your soul. Let's create unforgettable memories together.</p>
+    </div>
+    <div class="sticky-path d-flex flex-column">
+        <div class="box-sticky-path" style="z-index: 3;">
+            <div class="inner-sticky-path" style="background-image: url(media/four-step-1.jpg);">
+                <div class="overlay-sticky-path d-flex flex-column justify-end">
+                    <h1>Refresh</h1>
+                    <p>Seek thrilling adventures and ignite your senses with our Refresh experiences. From summiting towering mountains to exploring vibrant cities, every journey is designed to revitalize your spirit and create unforgettable memories.</p>
+                    <div class="btn-sticky-path d-flex align-center">
+                        More Information
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box-sticky-path" style="z-index: 4;">
+            <div class="inner-sticky-path" style="background-image: url(media/four-step-2.jpg);">
+                <div class="overlay-sticky-path d-flex flex-column justify-end">
+                    <h1>Restore</h1>
+                    <p>Restore your balance and well-being with our Restore experiences. Connect with nature through yoga and meditation, savor healthy cuisine, and participate in wellness retreats. Our Restore journeys will help you find inner peace and renewed energy.</p>
+                    <div class="btn-sticky-path d-flex align-center">
+                        More Information
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box-sticky-path" style="z-index: 5;">
+            <div class="inner-sticky-path" style="background-image: url(media/four-step-3.jpg);">
+                <div class="overlay-sticky-path d-flex flex-column justify-end">
+                    <h1>Relax</h1>
+                    <p>Unwind and de-stress with our Relax experiences. Indulge in luxurious spa treatments, bask on pristine beaches, or simply unwind in your private villa with breathtaking views. Our Relax journeys offer the perfect escape from the hustle and bustle of everyday life.</p>
+                    <div class="btn-sticky-path d-flex align-center">
+                        More Information
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box-sticky-path" style="z-index: 6;">
+            <div class="inner-sticky-path" style="background-image: url(media/four-step-4.jpg);">
+                <div class="overlay-sticky-path d-flex flex-column justify-end">
+                    <h1>Renew</h1>
+                    <p>Expand your horizons and discover new passions with our Renew experiences. Take cooking classes, learn a new language, or explore historic sites. Our Renew journeys will inspire you to grow and evolve.</p>
+                    <div class="btn-sticky-path d-flex align-center">
+                        More Information
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="plugins/jquery.js"></script>
+    <script>
+        let scoreAnswer = { refresh: 0, restore: 0, relax: 0, renew: 0 };
+        let nomorSoal = 0;
+        let selectedAnswer = "";
+        let quizData = [
+    {
+        question: "What do you need the most right now?",
+        answers: {
+            a: { text: "Spending time outdoors to feel refreshed and invigorated.", type: "refresh" },
+            b: { text: "Recharging your energy and rejuvenating both body and mind.", type: "restore" },
+            c: { text: "Enjoying uninterrupted quiet time in a peaceful place.", type: "relax" },
+            d: { text: "Experiencing something new and meaningful to renew yourself.", type: "renew" }
+        }
+    },
+    {
+        question: "How would you like to start your vacation?",
+        answers: {
+            a: { text: "With a refreshing physical activity, like walking in nature or swimming.", type: "refresh" },
+            b: { text: "With a body treatment, like a morning spa or yoga.", type: "restore" },
+            c: { text: "By sitting back with a cup of coffee and enjoying the view.", type: "relax" },
+            d: { text: "By joining a new class or activity that stimulates your mind and soul.", type: "renew" }
+        }
+    },
+    {
+        question: "When you feel tired, what do you usually do?",
+        answers: {
+            a: { text: "Go outside for a walk or light exercise.", type: "refresh" },
+            b: { text: "Seek out a massage or relaxation therapy to recover.", type: "restore" },
+            c: { text: "Enjoy quiet time in a peaceful place, undisturbed.", type: "relax" },
+            d: { text: "Engage in a new or challenging activity that energizes you.", type: "renew" }
+        }
+    },
+    {
+        question: "What kind of vacation activity do you imagine would be the most fun?",
+        answers: {
+            a: { text: "An outdoor adventure that keeps my body active and engaged.", type: "refresh" },
+            b: { text: "A rejuvenating experience like a spa or wellness retreat.", type: "restore" },
+            c: { text: "Spending time peacefully, maybe at the beach or in the mountains.", type: "relax" },
+            d: { text: "An activity that deepens my understanding or enriches my life experience.", type: "renew" }
+        }
+    },
+    {
+        question: "On vacation, what makes you feel the most satisfied?",
+        answers: {
+            a: { text: "Feeling refreshed and energized after outdoor activities.", type: "refresh" },
+            b: { text: "Feeling calm and recovered after comprehensive self-care.", type: "restore" },
+            c: { text: "Feeling relaxed and stress-free after quiet time.", type: "relax" },
+            d: { text: "Feeling inspired and renewed after trying something new.", type: "renew" }
+        }
+        }
+    ];
+
+        function loadQuestion(nomorSoal) {
+            let questionData = quizData[nomorSoal];
+            $(".text-question").text(questionData.question);
+            $("#answer-a").text("A. " + questionData.answers.a.text);
+            $("#answer-b").text("B. " + questionData.answers.b.text);
+            $("#answer-c").text("C. " + questionData.answers.c.text);
+            $("#answer-d").text("D. " + questionData.answers.d.text);
+        }
+
+
+        $(".option-answer").click(function(){
+            $(".option-answer").removeClass("selected-answer");
+            $(this).addClass("selected-answer");
+            selectedAnswer = $(this).attr('id');
+            $(".submit-answer").addClass("active");
+        });
+        
+        $(".submit-answer").click(function(){
+            if(selectedAnswer === "answer-a") {
+                scoreAnswer.refresh++;
+            } else if(selectedAnswer === "answer-b") {
+                scoreAnswer.restore++;
+            } else if(selectedAnswer === "answer-c") {
+                scoreAnswer.relax++;
+            } else if(selectedAnswer === "answer-d") {
+                scoreAnswer.renew++;
+            }
+            
+            if(selectedAnswer != ""){
+                $(".submit-answer").removeClass("active");
+                $(".option-answer").removeClass("selected-answer");
+                nomorSoal++;
+                if(nomorSoal < quizData.length){
+                    loadQuestion(nomorSoal);
+                }else{
+                    let highestScoreType = "";
+                    let highestScore = 0;
+                    for(let type in scoreAnswer){
+                        if (scoreAnswer[type] > highestScore) {
+                            highestScore = scoreAnswer[type];
+                            highestScoreType = type;
+                        }
+                    }
+                    console.log(`Most selected answer type is: ${highestScoreType} with ${highestScore} points.`);
+                }
+            }
+
+            selectedAnswer = "";
+
+            console.log(scoreAnswer);
+        });
+    </script>
+</body>
+</html>
