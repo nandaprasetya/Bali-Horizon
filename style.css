@@ -58,6 +58,92 @@
     overflow: hidden;
 }
 
+.transition{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 102;
+    top: 0;
+    left: 0;
+    background-color: #1c4219;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.8s ease;
+    clip-path: inset(0 0 0 0);
+}
+
+.transition.close{
+    transition: 0.8s ease-out;
+    clip-path: inset(0 0 100% 0);
+}
+
+.transition.none{
+    clip-path: inset(100% 0 0 0);
+}
+
+.transition .inner-transition{
+    width: fit-content;
+    height: fit-content;
+    overflow: hidden;
+}
+
+.inner-transition h1{
+    font-size: 40px;
+    text-align: center;
+    font-family: "Belleza", sans-serif;
+    color: #f1f1f1;
+    font-weight: 300;
+    letter-spacing: 5px;
+}
+
+.inner-transition h1.active{
+    animation: transitionopen 1.5s ease-in-out forwards;
+}
+
+@keyframes transitionopen {
+    0%{
+        transform: translateY(100%);
+        opacity: 0;
+    }40%{
+        transform: translateY(0%);
+        opacity: 1;
+    }60%{
+        transform: translateY(0%);
+        opacity: 1;
+    }100%{
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+}
+
+#cursor{
+    position: fixed;
+    z-index: 101;
+    pointer-events: none;
+}
+
+.inner-cursor{
+    border-radius: 50%;
+    background-color: rgba(241, 241, 241, 0.3);
+    backdrop-filter: blur(8px);
+    width: 80px;
+    height: 80px;
+    letter-spacing: 2px;
+    line-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0);
+    transition: 0.3s ease;
+    color: #1c4219; 
+}
+  
+.inner-cursor.active{
+    transform: scale(1);
+}
+  
+
 nav{
     width: 100%;
     height: fit-content;
@@ -69,6 +155,7 @@ nav{
     align-items: center;
     justify-content: space-between;
     transition: 0.5s ease;
+    pointer-events: none;
 }
 
 .nav.active{
@@ -90,19 +177,18 @@ nav .nav-btn{
     justify-content: center;
     background-color: #f7f7f7;
     cursor: pointer;
+    pointer-events: visible;
 }
 
 .nav-btn .nav-line{
     width: 40px;
     height: 1.5px;
     background-color: #2c5728;
-    /* background-color: #f7f7f7; */
     transition: 0.5s ease;
 }
 
 .nav-btn .nav-line:nth-child(1){
     margin-bottom: 5px;
-    /* height: 2px; */
 }
 
 .nav-line.active{
@@ -169,7 +255,6 @@ nav .nav-btn{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    /* padding-top: 2%; */
 }
 
 .inner-nav-menu{
@@ -196,6 +281,7 @@ nav .nav-btn{
     font-family: "Belleza", sans-serif;
     margin-bottom: 30px;
     line-height: 100%;
+    cursor: pointer;
     transition: 0.5s ease;
 }
 
@@ -255,6 +341,7 @@ nav .nav-btn{
     font-size: 20px;
     margin-bottom: 20px;
     color: #1c4219;
+    cursor: pointer;
 }
 
 main{
@@ -264,7 +351,6 @@ main{
     background-color: #fff;
     position: relative;
     z-index: 1;
-
 }
 
 .home{
@@ -277,7 +363,7 @@ main{
     flex-direction: column;
     align-items: center;
     justify-content: end;
-    padding-bottom: 5%;
+
 }
 
 .home h1{
@@ -293,6 +379,7 @@ main{
     color: #f2f2f2;
     text-align: center;
     font-size: 20px;
+    clip-path: inset(0 0 0 0);
 }
 
 .popular-destination{
@@ -442,8 +529,75 @@ main{
     transition: 0.5s ease;
 }
 
+.area-cul-aco{
+    width: 100%;
+    height: fit-content;
+    margin-top: 80px;
+}
+
+.area-cul-aco .culinary-home, .area-cul-aco .aco-home{
+    width: 50%;
+    aspect-ratio: 1/1;
+    background-size: cover;
+}
+
+.text-cul-aco{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(72, 68, 57, 0.4);
+    padding: 40px;
+}
+
+.text-cul-aco h1{
+    font-family: "Belleza", sans-serif;
+    font-weight: 300;
+    color: #f7f7f7;
+    font-size: 50px;
+    margin-bottom: 8px;
+}
+
+.text-cul-aco p{
+    color: #f1f1f1;
+    font-size: 20px;
+    font-weight: 300;
+    width: 80%;
+    letter-spacing: 1px;
+}
+
+.btn-discover-cul-aco{
+    width: fit-content;
+    height: fit-content;
+    padding: 20px 24px;
+    margin: 20px 0px;
+    cursor: pointer;
+    background-color: #1c4219;
+}
+
+.btn-discover-cul-aco .overflow-hidden{
+    height: 15px;
+}
+
+.inner-btn-discover-cul-aco{
+    width: 100%;
+    transition: 0.5s ease;
+    height: fit-content;
+}
+
+.inner-btn-discover-cul-aco h2{
+    color: #f1f1f1;
+    font-size: 15px;
+    letter-spacing: 2px;
+    font-weight: 400;
+    line-height: 100%;
+}
+
+.inner-btn-discover-cul-aco.active{
+    transform: translateY(-50%);
+    transition: 0.5s ease;
+}
+
 .home-activity{
-    margin: 150px 0px 50px;
+    margin: 80px 0px 50px;
     width: 100%;
     height: 100%;
 }
@@ -591,11 +745,32 @@ main{
     color: #1c4219;
 }
 
-.header-four-step a{
+.header-four-step .btn-four-step{
     letter-spacing: 1px;
     color: #1c4219;
     padding: 8px 4px;
     border-bottom: 1px solid #1c4219;
+    cursor: pointer;
+}
+
+.btn-four-step div{
+    height: 15px;
+}
+
+.inner-btn-four-step{
+    height: fit-content;
+    width: fit-content;
+    transition: 0.5s ease;
+}
+
+.inner-btn-four-step.active{
+    transform: translateY(-100%);
+    transition: 0.5s ease;
+}
+
+.btn-four-step p{
+    font-size: 15px;
+    line-height: 100%;
 }
 
 .header-four-step img{
@@ -668,14 +843,53 @@ footer{
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 100px 0px;
+    padding: 100px 5%;
     background-color: #1c4219;
+    display: flex;
+    justify-content: space-between;
 }
 
-.inner-footer{
+.logo-footer{
+    width: fit-content;
+}
+
+.logo-footer h1{
+    font-size: 20px;
+    color: #f7f7f7;
+    margin-bottom: 10px ;
+    font-family: "Belleza", sans-serif;
+    font-weight: 300;
+    letter-spacing: 3px;
+}
+
+.logo-footer p{
     width: 100%;
-    background-image: url(media/four-step-1.jpg);
-    height: 400px;
+    color: #f2f2f2;
+    font-weight: 300;
+}
+
+.footer-menu{
+    width: fit-content;
+    height: fit-content;
+}
+
+.footer-menu .box-footer-menu{
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    margin: 0px 40px;
+}
+
+.box-footer-menu div{
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #f1f1f1;
+    margin: 15px 0px;
+    cursor: pointer;
+    font-family: "Belleza", sans-serif;
+    font-weight: 300;
+    letter-spacing: 2px;
 }
 
 .landing-four-paths{
@@ -970,4 +1184,930 @@ footer{
     letter-spacing: 1px;
     cursor: pointer;
     width: fit-content;
+}
+
+.landing-destination{
+    width: 100%;
+    min-height: 100vh;
+    padding: 40px 0px 0px;
+}
+
+.bg-landing-destination{
+    height: 100vh;
+    width: 100%;
+    background-image: url(media/destination-ubud.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.landing-destination h1{
+    font-size: 80px;
+    font-family: "Belleza", sans-serif;
+    font-weight: 300;
+    color: #1c4219;
+}
+
+.landing-destination p{
+    font-size: 20px;
+    text-transform: uppercase;
+    margin: 10px 0px 40px;
+}
+
+.welcome-text-destination{
+    width: 100%;
+    height: fit-content;
+    padding: 80px 0px 0px;
+}
+
+.welcome-text-destination .line-welcome{
+    width: 50px;
+    height: 1px;
+    background-color: #1c4219;
+    margin: 0px 10px;
+}
+
+.welcome-text-destination h2{
+    font-size: 18px;
+    color: #1c4219;
+    letter-spacing: 1px;
+    font-weight: 400;
+}
+
+.welcome-text-destination h1{
+    font-size: 50px;
+    font-weight: 300;
+    font-family: "Belleza", sans-serif;
+    color: #1c4219;
+    margin: 25px 0px;
+}
+
+.welcome-text-destination p{
+    width: 40%;
+    text-align: center;
+    font-weight: 300;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+}
+
+.culiner-ubud{
+    width: 100%;
+    height: 100%;
+    margin: 80px 0px;
+    padding: 40px 0px;
+}
+
+.culiner-ubud .text-culiner-ubud{
+    width: 30%;
+    height: fit-content;
+    background-color: #B5C18E;
+    padding: 40px;
+    transform: translate(20%, -20%);
+}
+
+.text-culiner-ubud h1{
+    font-family: "Belleza", sans-serif;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #1c4219;
+}
+
+.text-culiner-ubud p{
+    font-weight: 300;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.text-culiner-ubud .btn-culiner-ubud{
+    padding: 16px 32px;
+    margin-top: 20px;
+    background-color: #1c4219;
+    color: #f7f7f7;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.img-culiner-ubud{
+    width: 50%;
+    aspect-ratio: 4/3;
+    background-image: url(media/ubud-culiner.jpg);
+    background-size: cover;
+}
+
+.area-closing-statement{
+    width: 100%;
+    height: 100%;
+    padding: 80px 0px;
+    background-color: #f7f7f7;
+}
+
+.area-closing-statement .box-closing-statement{
+    width: 80%;
+    height: fit-content;
+    padding: 30px;
+    background-color: #fff;
+}
+
+.box-closing-statement img{
+    width: 35%;
+    height: fit-content;
+}
+
+.text-closing-statement {
+    width: 40%;
+}
+
+.text-closing-statement h1{
+    font-size: 50px;
+    margin-bottom: 40px;
+    color: #1c4219;
+    font-family: "Belleza", sans-serif;
+    font-weight: 300;
+}
+
+.text-closing-statement p{
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: #636363;
+}
+
+.landing-path{
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+}
+
+.landing-path .text-landing-path{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(99, 93, 77, 0.4);
+}
+
+.text-landing-path h2{
+    font-size: 18px;
+    color: #f1f1f1;
+    letter-spacing: 2px;
+}
+
+.text-landing-path h1{
+    font-size: 80px;
+    font-family: "Belleza", sans-serif;
+    font-weight: 300;
+    color: #dbe3bb;
+    margin: 20px 0px;
+}
+
+.text-landing-path p{
+    width: 40%;
+    line-height: 1.6;
+    letter-spacing: 1px;
+    color: #f3f9dd;
+    text-align: center;
+}
+
+.welcome-text-path{
+    width: 100%;
+    height: fit-content;
+    padding: 120px 0px
+}
+
+.welcome-text-path .left-welcome-text-path{
+    width: 45%;
+    height: fit-content;
+}
+
+.welcome-text-path .right-welcome-text-path{
+    width: 40%;
+    height: fit-content;
+    margin-top: 50px;
+}
+
+.left-welcome-text-path img{
+    width: 80%;
+}
+
+.left-welcome-text-path h1{
+    width: 100%;
+    color: #1c4219;
+    font-size: 50px;
+    font-family: "Belleza", sans-serif;
+    font-weight: 300;
+    margin: 50px 0px 20px;
+}
+
+.left-welcome-text-path p{
+    line-height: 1.6;
+    font-weight: 300;
+    color: #1c4219;
+    width: 60%;
+    letter-spacing: 1px;
+}
+
+.right-welcome-text-path img:nth-child(1){
+    width: 40%;
+}
+.right-welcome-text-path img:nth-child(2){
+    width: 60%;
+    margin-top: 100px;
+}
+
+.path-activity{
+    width: 100%;
+    height: fit-content;
+    margin: 80px 0px;
+}
+
+.path-activity .header-path-activity{
+    width: 100%;
+    height: fit-content;
+}
+
+.header-path-activity h1{
+    font-family: "Belleza", sans-serif;
+    color: #1c4219;
+    font-weight: 300;
+    font-size: 80px;
+    margin-bottom: 20px;
+}
+
+.header-path-activity p{
+    letter-spacing: 8px;
+    font-size: 18px;
+}
+
+.area-path-activity{
+    width: 100%;
+    height: fit-content;
+    margin-top: 40px;
+}
+
+.area-path-activity .box-path-activity{
+    width: 30%;
+    height: fit-content;
+    position: relative;
+    aspect-ratio: 3/4;
+}
+
+.box-path-activity .text-path-activity{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(72, 68, 57, 0.4);
+    padding: 20px;
+}
+
+.text-path-activity h1{
+    font-family: "Belleza", sans-serif;
+    color: #f1f1f1;
+    font-weight: 300;
+    font-size: 50px;
+}
+
+.box-path-activity .img-path-activity{
+    width: 100%;
+    height: fit-content;
+    overflow: hidden;
+}
+
+.img-path-activity img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 3/4;
+}
+
+.more-path-activity{
+    width: 100%;
+    height: fit-content;
+    margin: 50px 0px 30px;
+}
+
+.more-path-activity p{
+    width: 30%;
+    text-align: center;
+    color: #1c4219;
+}
+
+.btn-more-path-activity{
+    width: fit-content;
+    height: fit-content;
+    padding: 16px 32px;
+    border: 1px solid #1c4219;
+    margin: 20px 0px;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.btn-more-path-activity:hover{
+    background-color: #1c4219;
+    transition: 0.5s ease;
+}
+
+.btn-more-path-activity:hover h1{
+    color: #f1f1f1;
+    transition: 0.5s ease;
+}
+
+.btn-more-path-activity div{
+    height: 18px;
+}
+
+.inner-btn-more-path-activity{
+    width: fit-content;
+    height: fit-content;
+    transition: 0.5s ease;
+}
+
+.inner-btn-more-path-activity.active{
+    transform: translateY(-100%);
+    transition: 0.5s ease;
+}
+
+.inner-btn-more-path-activity h1{
+    transition: 0.5s ease;
+    font-size: 18px;
+    line-height: 100%;
+    color: #1c4219;
+    letter-spacing: 2px;
+    font-weight: 400;
+    margin: 0px;
+}
+
+.search-background{
+    width: 100%;
+    height: 100px;
+    background-color: #1c4219;
+}
+
+.outer-search{
+    width: 100%;
+    height: fit-content;
+}
+
+.outer-search .search-area{
+    width: 40%;
+    height: fit-content;
+}
+
+.search-area input{
+    width: 100%;
+    height: 40px;
+    background-color: #1c4219;
+}
+
+.search-area .img-search{
+    height: 40px;
+    width: 40px;
+}
+
+.img-search img{
+    width: 80%;
+    height: 80%;
+}
+
+@media screen and (max-width: 998px) {
+
+    #cursor{
+        display: none;
+    }
+    .inner-nav-menu{
+        width: 300px;
+    }
+    .nav-menu-link{
+        font-size: 28px;
+    }
+
+    .other-menu .nav-menu-other{
+        font-size: 18px;
+    }
+
+    .home h1{
+        font-size: 50px;
+    }
+
+    .home p{
+        font-size: 15px;
+    }
+
+    .popular-destination h1{
+        font-size: 35px;
+    }
+
+    .popular-destination p{
+        width: 60%;
+        font-size: 15px;
+    }
+
+    .header-popular-des .inner-header-popular-des{
+        height: 25px;
+    }
+
+    .inner-header-popular-des h1{
+        font-size: 25px;
+    }
+
+    .text-cul-aco h1{
+        font-size: 30px;
+    }
+
+    .text-cul-aco p{
+        font-size: 15px;
+    }
+
+    .btn-discover-cul-aco{
+        padding: 16px 20px;
+    }
+
+    .inner-btn-discover-cul-aco h2{
+        font-size: 13px;
+    }
+
+    .btn-discover-cul-aco .overflow-hidden{
+        height: 13px;
+    }
+
+    .head-home-activity h1{
+        font-size: 30px;
+    }
+
+    .custom-activity-button-prev, .custom-activity-button-next{
+        width: 40px;
+        height: 40px;
+        padding: 10px;
+    }
+
+    .custom-activity-button-prev img, .custom-activity-button-next img{
+        width: 15px;
+        height: 15px;
+    }
+
+    .box-home-activity h1{
+        font-size: 30px
+    }
+
+    .box-home-activity p{
+        font-size: 13px;
+    }
+
+    .btn-home-activity{
+        padding: 16px 24px;
+    }
+
+    .header-four-step h1{
+        font-size: 30px;
+    }
+
+    .box-step h1{
+        font-size: 30px;
+    }
+
+    .box-footer-menu div{
+        font-size: 13px;
+        margin: 10px 0px;
+    }
+
+    .logo-footer p{
+        font-size: 13px;
+    }
+
+    .welcome-text-destination h1{
+        font-size: 30px;
+    }
+
+    .welcome-text-destination p{
+        width: 70%;
+    }
+
+    .culiner-ubud{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .img-culiner-ubud{
+        width: 70%;
+    }
+
+    .culiner-ubud .text-culiner-ubud{
+        width: 50%;
+    }
+
+    .text-culiner-ubud .btn-culiner-ubud{
+        font-size: 13px;
+        transform: translateY(-20%);
+    }
+
+    .area-closing-statement .box-closing-statement{
+        width: 90%;
+    }
+
+    .text-closing-statement h1{
+        font-size: 30px;
+    }
+
+    .text-closing-statement p{
+        font-size: 14px;
+    }
+
+    .landing-four-paths h1{
+        font-size: 40px;
+    }
+
+    .landing-four-paths p{
+        width: 70%;
+    }
+
+    .inner-sticky-path p{
+        width: 60%;
+    }
+
+    .box-question{
+        width: 90%;
+        margin: 5vh 5%;
+    }
+    
+    .outer-question{
+        z-index: 102;
+    }
+
+    .header-question h1{
+        margin: 20px 0px
+    }
+
+    .option-answer{
+        margin: 0px;
+        width: 100%;
+    }
+
+    .submit-answer{
+        font-size: 14px;
+    }
+
+    .text-landing-path h1{
+        font-size: 50px;
+        text-align: center;
+    }
+
+    .text-landing-path p{
+        width: 80%;
+    }
+    
+    .left-welcome-text-path h1{
+        font-size: 35px;
+    }
+
+    .inner-btn-more-path-activity h1{
+        font-size: 14px;
+    }
+
+    .btn-more-path-activity div{
+        height: 14px;
+    }
+
+    .text-path-activity h1{
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .area-cul-aco {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .area-cul-aco .culinary-home, .area-cul-aco .aco-home{
+        width: 100%;
+        aspect-ratio: 3/2;
+    }
+
+    .text-cul-aco{
+        padding: 20px;
+    }
+    .text-cul-aco h1{
+        font-size: 25px;
+    }
+    .text-cul-aco p{
+        letter-spacing: 0px;
+        font-size: 13px;
+    }
+    .area-four-step{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .box-step{
+        width: 100%;
+         border-right: 0px;
+         background-size: cover;
+         padding: 30px 0px;
+         height: 40vh;
+    }
+
+    .box-step:nth-child(1){
+        background-image: url(media/four-step-1.jpg);
+        background-position: bottom;
+    }
+    
+    .box-step:nth-child(2){
+        background-image: url(media/four-step-2.jpg);
+        background-position: bottom;
+    }
+    
+    .box-step:nth-child(3){
+        background-image: url(media/four-step-3.jpg);
+        background-position: bottom;
+    }
+    
+    .box-step:nth-child(4){
+        background-image: url(media/four-step-4.jpg);
+        background-position: bottom;
+    }
+
+    footer{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .logo-footer{
+        margin-bottom: 20px;
+    }
+
+    .footer-menu {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .footer-menu .box-footer-menu{
+        margin: 0px 20px 0px 0px;
+    }
+
+    #preview-nav-link{
+        display: none;
+    }
+
+    .other-menu{
+        width: fit-content;
+    }
+
+    .nav-menu-area{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .inner-nav-menu{
+        width: 100%;
+    }
+
+    .nav-menu-link{
+        margin-bottom: 15px;
+    }
+
+    .other-menu{
+        width: 100%;
+        padding-left: 20px;
+    }
+
+    nav .nav-btn, .nav-menu-head .nav-close{
+        width: 45px;
+        height: 45px;
+    }
+
+    .nav-btn .nav-line{
+        width: 30px;
+    }
+
+    .popular-destination h1{
+        text-align: center;
+    }
+
+    .culiner-ubud .text-culiner-ubud{
+        transform: translate(0px, -20%);
+    }
+
+    .area-closing-statement .box-closing-statement{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .box-closing-statement img{
+        transform: translateY(-20%);
+    }
+
+    .text-closing-statement{
+        width: 70%;
+        text-align: center;
+    }
+
+    .quiz-btn{
+        height: 80px;
+    }
+
+    .quiz-btn .text-quiz{
+        padding: 16px 24px;
+    }
+
+    .text-quiz h1{
+        font-size: 17px;
+    }
+
+    .text-quiz p{
+        font-size: 12px;
+    }
+
+    .overlay-sticky-path{
+        padding: 100px 40px;
+    }
+
+    .inner-sticky-path h1{
+        font-size: 40px;
+    }
+
+    .inner-sticky-path p{
+        width: 80%;
+    }
+
+    .inner-sticky-path{
+        background-position: center;
+    }
+
+    .box-question{
+        height: 90vh;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .area-answer.result{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .header-question h1{
+        font-size: 18px;
+    }
+
+    .img-result-quiz{
+        margin-right: 0px;
+        height: 180px;
+    }
+
+    .area-result-quiz h2{
+        margin: 8px;
+    }
+
+    .area-result-quiz{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .welcome-text-path{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .welcome-text-path .left-welcome-text-path{
+        width: 90%;
+    }
+
+    .welcome-text-path .right-welcome-text-path{
+        width: 90%;
+    }
+
+    .header-path-activity h1{
+        font-size: 40px;
+    }
+
+    .header-path-activity p{
+        font-size: 15px;
+    }
+
+    .more-path-activity p{
+        width: 80%;
+    }
+
+    .area-path-activity{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .area-path-activity .box-path-activity{
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .home h1{
+        font-size: 40px;
+    }
+
+    .area-cul-aco .culinary-home, .area-cul-aco .aco-home{
+        aspect-ratio: 1/1;
+    }
+
+    .head-home-activity{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .head-home-activity .area-btn-next-prev-act{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .home-four-step .header-four-step{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .home-four-step .header-four-step .overflow-hidden{
+        margin: 5px 0px;
+    }
+
+    footer{
+        padding: 40px 10px;
+    }
+
+    .landing-destination h1{
+        font-size: 40px;
+    }
+
+    .landing-destination p{
+        font-size: 17px;
+    }
+
+    .welcome-text-destination h1{
+        width: 80%;
+        text-align: center;
+    }
+
+    .culiner-ubud{
+        padding: 0px;
+    }
+
+    .img-culiner-ubud{
+        width: 100%;
+    }
+
+    .culiner-ubud .text-culiner-ubud{
+        width: 100%;
+        transform: translate(0px, 0px);
+    }
+
+    .box-closing-statement img{
+        width: 80%;
+    }
+
+    .sticky-path .box-sticky-path{
+        padding: 0px;
+    }
+
+    .inner-sticky-path p{
+        width: 100%;
+    }
+
+    .overlay-sticky-path{
+        text-align: center;
+        padding: 150px 40px;
+    }
+
+    .area-answer{
+        width: 100%;
+    }
+
+    .option-answer{
+        padding: 4px 8px;
+    }
+
+    .img-result-quiz{
+        height: 100px;
+    }
+
+    .area-result-quiz .result-quiz-btn{
+        margin: 10px 0px;
+    }
+
+    .landing-path .text-landing-path{
+        padding: 20px;
+    }
+
+    .text-landing-path h1{
+        font-size: 30px;
+    }
 }

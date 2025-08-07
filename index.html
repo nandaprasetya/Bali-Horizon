@@ -7,8 +7,28 @@
     <link rel="shortcut icon" href="media/Logo Horizon.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="plugins/swiper.css">
+    <style>
+        .text-home{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: end;
+            background-color: rgba(0, 0, 0, 0.2);
+            padding-bottom: 5%;
+        }
+    </style>
 </head>
 <body>
+    <div class="transition">
+        <div class="inner-transition">
+            <h1>BALI <br> HORIZON</h1>
+        </div>
+    </div>
+    <div id="cursor">
+        <div class="inner-cursor">VIEW</div>
+    </div>
     <nav class="nav">
         <img src="media/Logo Horizon Title.png" alt="">
         <div class="nav-btn" id="nav-btn">
@@ -26,30 +46,36 @@
         </div>
         <div class="nav-menu-area">
             <div class="inner-nav-menu hide">
-                <a href="" class="nav-menu-link" id="nav-link-home"> <div class="nav-menu-line"></div> Home</a>
-                <a href="" class="nav-menu-link" id="nav-link-destination"><div class="nav-menu-line"></div> Destination</a>
-                <a href="" class="nav-menu-link" id="nav-link-activity"><div class="nav-menu-line"></div> Activity</a>
-                <a href="" class="nav-menu-link" id="nav-link-culinary"><div class="nav-menu-line"></div> Culinary</a>
-                <a href="" class="nav-menu-link" id="nav-link-accommodation"><div class="nav-menu-line"></div> Accommodation</a>
-                <a href="" class="nav-menu-link" id="nav-link-transportation"><div class="nav-menu-line"></div> Transportation</a>
+                <div class="nav-menu-link" id="nav-link-home"> <div class="nav-menu-line"></div> Home</div>
+                <div class="nav-menu-link" id="nav-link-destination"><div class="nav-menu-line"></div> Destination</div>
+                <div class="nav-menu-link" id="nav-link-activity"><div class="nav-menu-line"></div> Activity</div>
+                <div class="nav-menu-link" id="nav-link-culinary"><div class="nav-menu-line"></div> Culinary</div>
+                <div class="nav-menu-link" id="nav-link-accommodation"><div class="nav-menu-line"></div> Accommodation</div>
+                <div class="nav-menu-link" id="nav-link-transportation"><div class="nav-menu-line"></div> Transportation</div>
             </div>
             <img src="media/gwk.jpg" alt="" id="preview-nav-link" class="hide">
             <div class="other-menu hide">
-                <a href="" class="nav-menu-other">Souvenirs</a>
-                <a href="" class="nav-menu-other">Photographer</a>
-                <a href="" class="nav-menu-other">Tour Guide</a>
-                <a href="" class="nav-menu-other">Contact</a>
+                <div class="nav-menu-other">Souvenirs</div>
+                <div class="nav-menu-other">Photographer</div>
+                <div class="nav-menu-other">Tour Guide</div>
+                <div class="nav-menu-other">Contact</div>
             </div>
         </div>
-    </div>
+    </div>  
 
     <main>
         <div class="home">
-            <h1>Your Gateway to <br> Extraordinary Journeys</h1>
-            <p>Experience the world like never before. <br> Let us guide you to the most awe-inspiring places.</p>
+            <div class="text-home">
+                <div class="overflow-hidden">
+                    <h1>Your Gateway to <br> Extraordinary Journeys</h1>
+                </div>
+                <p>Experience the world like never before. <br> Let us guide you to the most awe-inspiring places.</p>
+            </div>
         </div>
         <div class="popular-destination d-flex flex-column align-center">
-            <h1>Discover Bali Iconic Destinations</h1>
+            <div class="head-home-pop overflow-hidden">
+                <h1>Discover Bali Iconic Destinations</h1>
+            </div>
             <p>Our carefully curated list highlights the best of Bali, offering a unique experience at every turn.</p>
             <div class="area-slider-destination">
                 <div class="swiper inner-popular-destination">
@@ -136,15 +162,49 @@
                 <div class="line-popular"></div>
             </div>
         </div>
+        <div class="area-cul-aco d-flex align-center">
+            <div class="culinary-home" style="background-image: url(media/culinary-home.jpg);">
+                <div class="text-cul-aco d-flex flex-column justify-end">
+                    <h1>Savor Bali Flavors</h1>
+                    <p>Explore Bali vibrant food scene, where every meal is an adventure. From street food to fine dining, the island has it all.</p>
+                    <div class="btn-discover-cul-aco">
+                        <div class="overflow-hidden">
+                            <div class="inner-btn-discover-cul-aco d-flex flex-column">
+                                <h2>DISCOVER CULINARY</h2>
+                                <h2>DISCOVER CULINARY</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="aco-home" style="background-image: url(media/villa-home.jpg);">
+                <div class="text-cul-aco d-flex flex-column justify-end">
+                    <h1>Stay in Comfort & Style</h1>
+                    <p>Whether you seek luxury or simplicity, Bali accommodations offer the perfect setting for your stay, with world-class amenities.</p>
+                    <div class="btn-discover-cul-aco">
+                        <div class="overflow-hidden">
+                            <div class="inner-btn-discover-cul-aco d-flex flex-column">
+                                <h2>DISCOVER CULINARY</h2>
+                                <h2>DISCOVER CULINARY</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="home-activity d-flex flex-column align-center">
             <div class="head-home-activity d-flex align-center">
-                <h1>Explore Activities</h1>
-                <div class="line-home-activity"></div>
-                <div class="custom-activity-button-prev d-flex align-center justify-center">
-                    <img src="media/left-arrow.png" alt="">
+                <div class="overflow-hidden" style="min-width: fit-content;">
+                    <h1>Explore Activities</h1>
                 </div>
-                <div class="custom-activity-button-next d-flex align-center justify-center">
-                    <img src="media/right-arrow.png" alt="">
+                <div class="line-home-activity"></div>
+                <div class="d-flex area-btn-next-prev-act">
+                    <div class="custom-activity-button-prev d-flex align-center justify-center">
+                        <img src="media/left-arrow.png" alt="">
+                    </div>
+                    <div class="custom-activity-button-next d-flex align-center justify-center">
+                        <img src="media/right-arrow.png" alt="">
+                    </div>
                 </div>
             </div>
             <div class="area-home-activity">
@@ -230,11 +290,20 @@
         </div>
         <div class="home-four-step d-flex flex-column align-center">
             <div class="header-four-step d-flex align-end justify-between">
-                <h1>Discover Four Paths <br> to Happiness</h1>
-                <a href="" class="d-flex align-center">
-                    DISCOVER PATHS
-                    <img src="media/short-right-arrow.png" alt="">
-                </a>
+                <div class="overflow-hidden">
+                    <h1>Discover Four Paths <br> to Happiness</h1>
+                </div>
+                <div class="overflow-hidden">
+                    <div class="btn-four-step d-flex align-center">
+                        <div class="overflow-hidden">
+                            <div class="inner-btn-four-step">
+                                <p>DISCOVER PATHS</p>
+                                <p>DISCOVER PATHS</p>
+                            </div>
+                        </div>
+                        <img src="media/short-right-arrow.png" alt="">
+                    </div>
+                </div>
             </div>
             <div class="area-four-step d-flex">
                 <div id="box-step-1" class="box-step d-flex flex-column align-center justify-between">
@@ -261,24 +330,121 @@
         </div>
     </main>
     <footer>
-        
+        <div class="logo-footer">
+            <h1>BALI HORIZON</h1>
+            <p>Craft Your Ideal Bali Adventure</p>
+            <p style="margin-top: 25px;">Jl. Raya Kampus Udayana, Jimbaran, <br> Kec. Kuta Sel., Kabupaten Badung, Bali 80361</p>
+        </div>
+        <div class="footer-menu d-flex">
+            <div class="box-footer-menu">
+                <div>Home</div>
+                <div>Destination</div>
+                <div>Activity</div>
+                <div>Culinary</div>
+                <div>Accommodation</div>
+                <div>Transportation</div>
+            </div>
+            <div class="box-footer-menu">
+                <div>Souvenirs</div>
+                <div>Photographer</div>
+                <div>Tour Guide</div>
+                <div>Contact</div>
+            </div>
+            <div class="box-footer-menu">
+                <div>Instagram</div>
+                <div>Facebook</div>
+                <div>Youtobe</div>
+                <div>Tiktok</div>
+            </div>
+        </div>
     </footer>
 
     <script src="plugins/jquery.js"></script>
     <script src="plugins/gsap.js"></script>
     <script src="plugins/ScrollTrigger.js"></script>
     <script src="plugins/swiper.js"></script>
-    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script> 
+    <script src="plugins/lenis.min.js"></script> 
     <script>
+    gsap.registerPlugin(ScrollTrigger);
     const lenis = new Lenis()
-        lenis.on('scroll', (e) => {
-            console.log(e)
-        });
-        function raf(time) {
-            lenis.raf(time)
-            requestAnimationFrame(raf)
-        }
+    lenis.on('scroll', (e) => {
+        // console.log(e)
+    });
+    function raf(time) {
+        lenis.raf(time)
         requestAnimationFrame(raf)
+    }
+    requestAnimationFrame(raf)
+
+    $(".inner-transition h1").addClass("active");
+    setTimeout(() => {
+        $(".transition").addClass("close");
+        setTimeout(() => {
+            $(".transition").removeClass("close");
+            $(".transition").addClass("none");
+        }, 800);
+    }, 1500);
+
+    function redirectanim() {
+        $(".transition").removeClass("none");
+    }
+
+    let cursor = $("#cursor");
+    let wind = window.innerWidth;
+    let innerCursor = $(".inner-cursor");
+        
+    function movecursor(e) {
+        let widthcursor = $("#cursor").width()/2;
+        wind = window.innerWidth;
+
+        if(e.clientX > wind / 2){
+            gsap.to(cursor, {
+            duration: 0.3,
+            delay:0.1,
+            x: e.clientX - widthcursor,
+            y: e.clientY -  widthcursor,
+            ease: "power2.out"
+        });
+        }else{
+            gsap.to(cursor, {
+            duration: 0.3,
+            delay:0.1,
+            x: e.clientX - widthcursor,
+            y: e.clientY -  widthcursor,
+            ease: "power2.out"
+        });
+        }
+    }
+
+    $(window).on('mousemove', movecursor);
+    $(window).resize(movecursor);
+
+    $(".inner-popular-destination .swiper-wrapper").mouseenter(function(){
+        $(".inner-cursor").text("VIEW");
+        $(".inner-cursor").addClass("active");
+    });
+    
+    $(".inner-popular-destination .swiper-wrapper").mouseleave(function(){
+        $(".inner-cursor").removeClass("active");
+    });
+    
+    $(".inner-home-activity").mouseenter(function(){
+        $(".inner-cursor").addClass("active");
+        $(".inner-cursor").text("VIEW");
+    });
+    
+    $(".inner-home-activity").mouseleave(function(){
+        $(".inner-cursor").removeClass("active");
+    });
+
+    $(".area-four-step").mouseenter(function(){
+        $(".inner-cursor").addClass("active");
+    });
+    
+    $(".area-four-step").mouseleave(function(){
+        $(".inner-cursor").removeClass("active");
+    });
+
     const swiper = new Swiper('.inner-popular-destination', {
         direction: 'horizontal',
         loop: true,
@@ -287,6 +453,27 @@
         navigation: {
             nextEl: '.custom-destination-button-next',
             prevEl: '.custom-destination-button-prev',
+        },
+        breakpoints: {
+            998: {
+                slidesPerView: 4,
+            },
+            768: {
+                slidesPerView: 3,
+            },
+            500:{
+                slidesPerView: 2,
+            }, 
+            320:{
+                slidesPerView: 1
+            }
+        },
+        on: {
+            touchStart: function() {
+                $(".inner-cursor").text("DRAG");
+            },touchEnd: function() {
+                $(".inner-cursor").text("VIEW");
+            }
         },
     });
     
@@ -299,6 +486,27 @@
         navigation: {
             nextEl: '.custom-activity-button-next',
             prevEl: '.custom-activity-button-prev',
+        },
+        breakpoints: {
+            998: {
+                slidesPerView: 4,
+            },
+            768: {
+                slidesPerView: 3,
+            },
+            500:{
+                slidesPerView: 2,
+            }, 
+            320:{
+                slidesPerView: 1
+            }
+        },
+        on: {
+        touchStart: function() {
+            $(".inner-cursor").text("DRAG");
+        },touchEnd: function() {
+            $(".inner-cursor").text("VIEW");
+        }
         },
     });
         $("#nav-btn").click(function(){
@@ -374,6 +582,19 @@
             $('.inner-btn-home-activity').removeClass('active');
         }
         );
+        $(".btn-four-step").hover(function(){
+            $('.inner-btn-four-step').addClass('active');
+        }, function() {
+            $('.inner-btn-four-step').removeClass('active');
+        }
+        );
+        
+        $(".btn-discover-cul-aco").hover(function(){
+            $(this).find('.inner-btn-discover-cul-aco').addClass('active');
+        }, function() {
+            $(this).find('.inner-btn-discover-cul-aco').removeClass('active');
+        }
+        );
 
         $("#box-step-1").hover(function(){
             $(".area-four-step").addClass('step1');
@@ -406,6 +627,272 @@
         }, function(){
             $(".area-four-step").removeClass('step4');
             $(".box-step").removeClass("nonhover");
+        });
+
+        gsap.from(".home div h1",{
+        y: '100%',
+        duration:1,
+        delay:2.8,
+        ease: "power2.out",
+        });
+
+        gsap.from(".home p",{
+        clipPath: 'inset(0 100% 50% 0)',
+        duration:1,
+        delay:2.8,
+        ease: "power2.out",
+        });
+        
+        gsap.from(".head-home-pop h1",{
+        scrollTrigger:{
+            trigger: ".head-home-pop h1",
+            toggleActions: "play none none none"
+        },
+        y: '100%',
+        duration:1,
+        delay:0.1,
+        ease: "power2.out",
+        });
+
+        gsap.from(".popular-destination p",{
+        scrollTrigger:{
+            trigger: ".popular-destination p",
+            toggleActions: "play none none none"
+        },
+        clipPath: 'inset(0 100% 0 0)',
+        opacity: 0,
+        duration:1,
+        delay:0.6,
+        ease: "power2.out",
+        });
+
+        gsap.from(".line-popular:nth-child(1)",{
+        scrollTrigger:{
+            trigger: ".line-popular",
+            toggleActions: "play none none none"
+        },
+        clipPath: 'inset(0 100% 0 0)',
+        duration:0.5,
+        delay:0.3,
+        ease: "power2.out",
+        });
+        
+        gsap.from(".line-popular:nth-child(3)",{
+        scrollTrigger:{
+            trigger: ".line-popular",
+            toggleActions: "play none none none"
+        },
+        clipPath: 'inset(0 0 0 100%)',
+        duration:0.5,
+        delay:0.3,
+        ease: "power2.out",
+        });
+        
+        gsap.from(".area-btn-popular-destination .btn-popular",{
+        scrollTrigger:{
+            trigger: ".btn-popular",
+            toggleActions: "play none none none"
+        },
+        opacity: 0,
+        duration:0.5,
+        delay:0.8,
+        ease: "power2.out",
+        });
+        
+        gsap.from(".head-home-activity h1",{
+        scrollTrigger:{
+            trigger: ".head-home-activity h1",
+            toggleActions: "play none none none"
+        },
+        y: '100%',
+        opacity: 0,
+        duration:0.5,
+        delay:0.4,
+        ease: "power2.out",
+        });
+
+        gsap.from(".line-home-activity",{
+        scrollTrigger:{
+            trigger: ".line-home-activity",
+            toggleActions: "play none none none"
+        },
+        clipPath: 'inset(0 50% 0 50%)',
+        duration:0.5,
+        delay:0.3,
+        ease: "power2.out",
+        });
+        
+        gsap.from(".custom-activity-button-prev",{
+        scrollTrigger:{
+            trigger: ".custom-activity-button-prev",
+            toggleActions: "play none none none"
+        },
+        x: '50%',
+        opacity: 0,
+        duration:0.8,
+        delay:0.4,
+        ease: "power2.out",
+        });
+        
+        gsap.from(".custom-activity-button-next",{
+        scrollTrigger:{
+            trigger: ".custom-activity-button-next",
+            toggleActions: "play none none none"
+        },
+        x: '-50%',
+        opacity: 0,
+        duration:0.8,
+        delay:0.4,
+        ease: "power2.out",
+        });
+
+        gsap.utils.toArray(".box-popular-des").forEach((element, i) => {
+            gsap.set(element, {opacity:0})
+            gsap.from(element, {
+                y: 200,
+                scrollTrigger: {
+                    trigger: element,
+                    start: "top 100%"
+                }
+            });
+        });
+        ScrollTrigger.batch(".box-popular-des", {
+            onEnter: batch => gsap.to(batch, {opacity: 1, y: 0, stagger: {each: 0.15, grid: [1, 4]}, overwrite: true}),
+        });
+        
+        gsap.utils.toArray(".box-home-activity").forEach((element, i) => {
+            gsap.set(element, {opacity:0})
+            gsap.from(element, {
+                y: 200,
+                scrollTrigger: {
+                    trigger: element,
+                    start: "top 100%"
+                }
+            });
+        });
+        ScrollTrigger.batch(".box-home-activity", {
+            onEnter: batch => gsap.to(batch, {opacity: 1, y: 0, stagger: {each: 0.15, grid: [1, 4]}, overwrite: true}),
+        });
+
+        gsap.from(".btn-home-activity",{
+        scrollTrigger:{
+            trigger: ".btn-home-activity",
+            toggleActions: "play none none none"
+        },
+        y: '50%',
+        opacity: 0,
+        duration:0.5,
+        delay:0.5,
+        ease: "power2.out",
+        });
+        
+        gsap.from(".header-four-step div h1",{
+        scrollTrigger:{
+            trigger: ".header-four-step div h1",
+            toggleActions: "play none none none"
+        },
+        y: '100%',
+        opacity: 0,
+        duration:0.8,
+        delay:0.3,
+        ease: "power2.out",
+        });
+        
+        gsap.from(".btn-four-step",{
+        scrollTrigger:{
+            trigger: ".btn-four-step",
+            toggleActions: "play none none none"
+        },
+        y: '100%',
+        opacity: 0,
+        duration:0.8,
+        delay:0.5,
+        ease: "power2.out",
+        });
+        
+        gsap.from(".text-cul-aco h1",{
+        scrollTrigger:{
+            trigger: ".text-cul-aco h1",
+            toggleActions: "play none none none"
+        },
+        clipPath: 'inset(0 100% 0 0)',
+        opacity: 0,
+        duration:0.8,
+        delay:0.3,
+        ease: "power2.out",
+        });
+        
+        gsap.from(".text-cul-aco p",{
+        scrollTrigger:{
+            trigger: ".text-cul-aco p",
+            toggleActions: "play none none none"
+        },
+        clipPath: 'inset(0 100% 0 0)',
+        opacity: 0,
+        duration:0.8,
+        delay:0.4,
+        ease: "power2.out",
+        });
+        
+        gsap.from(".btn-discover-cul-aco",{
+        scrollTrigger:{
+            trigger: ".btn-discover-cul-aco",
+            toggleActions: "play none none none"
+        },
+        y: '50%',
+        opacity: 0,
+        duration:0.8,
+        delay:0.4,
+        ease: "power2.out",
+        });
+
+        $("#box-step-1").click(function(){
+            redirectanim();
+            setTimeout(() => {
+                window.location.href = "refresh.html";
+            }, 800);
+        });
+        
+        $("#box-step-2").click(function(){
+            redirectanim();
+            setTimeout(() => {
+                window.location.href = "restore.html";
+            }, 800);
+        });
+        
+        $("#box-step-3").click(function(){
+            redirectanim();
+            setTimeout(() => {
+                window.location.href = "relax.html";
+            }, 800);
+        });
+        
+        $("#box-step-4").click(function(){
+            redirectanim();
+            setTimeout(() => {
+                window.location.href = "renew.html";
+            }, 800);
+        });
+        
+        $(".box-popular-des").click(function(){
+            redirectanim();
+            setTimeout(() => {
+                window.location.href = "destination.html";
+            }, 800);
+        });
+        
+        $(".btn-four-step").click(function(){
+            redirectanim();
+            setTimeout(() => {
+                window.location.href = "four-paths.html";
+            }, 800);
+        });
+        
+        $("#nav-link-home").click(function(){
+            redirectanim();
+            setTimeout(() => {
+                window.location.href = "index.html";
+            }, 800);
         });
     </script>
 </body>
